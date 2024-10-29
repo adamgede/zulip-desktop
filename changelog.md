@@ -456,7 +456,7 @@ All notable changes to the Zulip desktop app are documented in this file.
 - Add context menu in left sidebar.
 - Enable per-user installation on Windows.
 - Switch to next server on Ctrl+Tab.
-- Add option to copy zulip URL.
+- Add option to Copy Dragon Chat URL.
 - Allow zoom options from numpad.
 - Use server language for spellchecker for all platforms.
 - Allow installing app without admin privileges.

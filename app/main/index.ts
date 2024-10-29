@@ -77,7 +77,7 @@ function createMainWindow(): BrowserWindow {
 
   const win = new BrowserWindow({
     // This settings needs to be saved in config
-    title: "Zulip",
+    title: "Dragon Chat",
     icon: iconPath(),
     x: mainWindowState.x,
     y: mainWindowState.y,
@@ -124,7 +124,7 @@ function createMainWindow(): BrowserWindow {
     }
   });
 
-  win.setTitle("Zulip");
+  win.setTitle("Dragon Chat");
 
   win.on("enter-full-screen", () => {
     send(win.webContents, "enter-fullscreen");
@@ -169,7 +169,7 @@ function createMainWindow(): BrowserWindow {
   }
 
   // Used for notifications on Windows
-  app.setAppUserModelId("org.zulip.zulip-electron");
+  app.setAppUserModelId("org.dragonplayground.dragon-chat");
 
   remoteMain.initialize();
 
@@ -204,7 +204,7 @@ function createMainWindow(): BrowserWindow {
   });
 
   const ses = session.fromPartition("persist:webviewsession");
-  ses.setUserAgent(`ZulipElectron/${app.getVersion()} ${ses.getUserAgent()}`);
+  ses.setUserAgent(`DragonChat/${app.getVersion()} ${ses.getUserAgent()}`);
 
   function configureSpellChecker() {
     const enable = ConfigUtil.getConfigItem("enableSpellchecker", true);
@@ -428,7 +428,7 @@ ${error}`,
     AppMenu.setMenu(properties);
     if (properties.activeTabIndex !== undefined) {
       const activeTab = properties.tabs[properties.activeTabIndex];
-      mainWindow.setTitle(`Zulip - ${activeTab.name}`);
+      mainWindow.setTitle(`Dragon Chat - ${activeTab.name}`);
     }
   });
 

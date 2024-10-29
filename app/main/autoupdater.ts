@@ -57,11 +57,19 @@ export async function appUpdater(updateFromMenu = false): Promise<void> {
         autoUpdater.removeAllListeners(event);
       }
 
-      await dialog.showMessageBox({
-        message: `A new version ${info.version}, of Zulip Desktop is available`,
-        detail:
-          "The update will be downloaded in the background. You will be notified when it is ready to be installed.",
-      });
+      await dialog
+        .showMessageBox({
+          message: `A new version ${info.version}, of Dragon Chat is available`,
+          detail:
+            "The update will be downloaded in the background. You will be notified when it is ready to be installed.",
+          buttons: ['Sure', 'No']
+        })
+        .then(buttonIndex => {
+          if (buttonIndex.response === 0) {
+            autoUpdater.downloadUpdate();
+          }
+        })
+        .catch(e => console.log(e));
     }
   });
 
@@ -73,7 +81,7 @@ export async function appUpdater(updateFromMenu = false): Promise<void> {
 
       await dialog.showMessageBox({
         message: "No updates available",
-        detail: `You are running the latest version of Zulip Desktop.\nVersion: ${app.getVersion()}`,
+        detail: `You are running the latest version of Dragon Chat.\nVersion: ${app.getVersion()}`,
       });
     }
   });
@@ -91,14 +99,12 @@ export async function appUpdater(updateFromMenu = false): Promise<void> {
         type: "error",
         buttons: ["Manual Download", "Cancel"],
         message: messageText,
-        detail: `Error: ${error.message}
-
-The latest version of Zulip Desktop is available at -
-https://zulip.com/apps/.
-Current Version: ${app.getVersion()}`,
+        detail: `Error: ${error.message}`,
       });
       if (response === 0) {
-        await shell.openExternal("https://zulip.com/apps/");
+        await shell.openExternal(
+          "https://github.com/adamgede/zulip-desktop/releases/latest/download/dragon-chat.exe"
+        );
       }
     }
   });

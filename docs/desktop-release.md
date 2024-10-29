@@ -10,9 +10,9 @@
 
 **Check for the logs in -**
 
-- **on Linux:** `~/.config/Zulip/log.log`
-- **on OS X:** `~/Library/Logs/Zulip/log.log`
-- **on Windows:** `%USERPROFILE%\AppData\Roaming\Zulip\log.log`
+- **on Linux:** `~/.config/DragonChat/log.log`
+- **on OS X:** `~/Library/Logs/DragonChat/log.log`
+- **on Windows:** `%USERPROFILE%\AppData\Roaming\DragonChat\log.log`
 
 ## - All the installer i.e.
 

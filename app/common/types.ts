@@ -15,8 +15,8 @@ export type ServerConfig = {
   url: string;
   alias: string;
   icon: string;
-  zulipVersion: string;
-  zulipFeatureLevel: number;
+  dragonChatVersion: string;
+  dragonChatFeatureLevel: number;
 };
 
 export type TabRole = "server" | "function";

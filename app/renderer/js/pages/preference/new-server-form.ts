@@ -23,7 +23,8 @@ export function initNewServerForm({
         <input
           class="setting-input-value"
           autofocus
-          placeholder="your-organization.zulipchat.com or zulip.your-organization.com"
+          placeholder="https://chat.dragonplayground.com"
+          value="https://chat.dragonplayground.com"
         />
       </div>
       <div class="server-center">
@@ -91,7 +92,7 @@ export function initNewServerForm({
   });
 
   // Open create new org link in default browser
-  const link = "https://zulip.com/new/";
+  const link = "https://chat.dragonplayground.com/new/";
   const externalCreateNewOrgElement = $root.querySelector(
     "#open-create-org-link",
   )!;

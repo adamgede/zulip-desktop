@@ -1,21 +1,21 @@
 {
-  "name": "zulip",
-  "productName": "Zulip",
-  "version": "5.11.1",
+  "name": "dragon-chat",
+  "productName": "Dragon Chat",
+  "version": "1.0.1",
   "main": "./dist-electron",
-  "description": "Zulip Desktop App",
+  "description": "Dragon Chat Desktop App",
   "license": "Apache-2.0",
-  "copyright": "Kandra Labs, Inc.",
+  "copyright": "Dragon Playground, LLC.",
   "author": {
-    "name": "Kandra Labs, Inc.",
-    "email": "support@zulip.com"
+    "name": "Dragon Playground, LLC.",
+    "email": "support@dragonplayground.com"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/zulip/zulip-desktop.git"
+    "url": "https://github.com/adamgede/zulip-desktop.git"
   },
   "bugs": {
-    "url": "https://github.com/zulip/zulip-desktop/issues"
+    "url": "https://github.com/adamgede/zulip-desktop/issues"
   },
   "engines": {
     "node": ">=18"
@@ -39,7 +39,7 @@
     "test"
   ],
   "build": {
-    "appId": "org.zulip.zulip-electron",
+    "appId": "org.dragonplayground.dragon-chat",
     "asar": true,
     "asarUnpack": [
       "**/*.node"
@@ -75,19 +75,19 @@
     "linux": {
       "category": "Chat;GNOME;GTK;Network;InstantMessaging",
       "icon": "build/icon.icns",
-      "description": "Zulip Desktop Client for Linux",
+      "description": "Dragon Chat Desktop Client for Linux",
       "target": [
         "deb",
         "tar.xz",
         "AppImage",
         "snap"
       ],
-      "maintainer": "Akash Nimare <akash@zulip.com>",
+      "maintainer": "Adam Gedeborg <adamgedeborg@gmail.com>",
       "artifactName": "${productName}-${version}-${arch}.${ext}"
     },
     "deb": {
       "packageCategory": "net",
-      "synopsis": "Zulip Desktop App",
+      "synopsis": "Dragon Chat Desktop App",
       "afterInstall": "./packaging/deb-after-install.sh",
       "fpm": [
         "./packaging/deb-apt.list=/etc/apt/sources.list.d/zulip-desktop.list",
@@ -96,7 +96,7 @@
       ]
     },
     "snap": {
-      "synopsis": "Zulip Desktop App"
+      "synopsis": "Dragon Chat Desktop App"
     },
     "dmg": {
       "background": "build/dmg-background.tiff",
@@ -120,11 +120,7 @@
         }
       ],
       "icon": "build/icon.ico",
-      "publisherName": "Kandra Labs, Inc.",
-      "sign": "./scripts/win-sign.js",
-      "signingHashAlgorithms": [
-        "sha256"
-      ]
+      "publisherName": "Dragon Playground, LLC."
     },
     "msi": {
       "artifactName": "${productName}-${version}-${arch}.${ext}"
@@ -132,14 +128,14 @@
     "nsis": {
       "allowToChangeInstallationDirectory": true,
       "oneClick": false,
-      "perMachine": false
+      "perMachine": true
     },
     "nsisWeb": {
-      "artifactName": "${productName}-Web-Setup-${version}.${ext}"
+      "artifactName": "${productName}-${version}.${ext}"
     }
   },
   "keywords": [
-    "Zulip",
+    "Dragon Chat",
     "Group Chat app",
     "electron-app",
     "electron",
@@ -312,7 +308,6 @@
       },
       {
         "files": [
-          "scripts/win-sign.js",
           "tests/**/*.js"
         ],
         "parserOptions": {

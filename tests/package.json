@@ -1,5 +1,5 @@
 {
   "version": "5.9.3",
-  "productName": "ZulipTest",
+  "productName": "DragonChatTest",
   "main": "../dist-electron"
 }

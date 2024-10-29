@@ -14,14 +14,14 @@ merge of the PR, rather than requiring the PR to be manually
 (and to the casual observer misleadingly) closed instead.
 
 REMOTE defaults to the value of the Git config variable
-\`zulip.zulipRemote\` if set, else to \`upstream\`.
+\`dragonchat.dragonChatRemote\` if set, else to \`upstream\`.
 
 See also \`reset-to-pull-request\`.
 EOF
     exit 1
 }
 
-remote_default="$(git config zulip.zulipRemote || echo upstream)"
+remote_default="$(git config dragonchat.dragonChatRemote || echo upstream)"
 
 pr_id="$1"
 remote="${2:-"$remote_default"}"

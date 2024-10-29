@@ -27,8 +27,8 @@ const serverConfigSchema = z.object({
   url: z.string().url(),
   alias: z.string(),
   icon: z.string(),
-  zulipVersion: z.string().default("unknown"),
-  zulipFeatureLevel: z.number().default(0),
+  dragonChatVersion: z.string().default("unknown"),
+  dragonChatFeatureLevel: z.number().default(0),
 });
 
 let database!: JsonDB;
@@ -41,7 +41,7 @@ try {
   if (typeof oldDomain === "string") {
     (async () => {
       await addDomain({
-        alias: "Zulip",
+        alias: "Dragon Chat",
         url: oldDomain,
       });
       database.delete("/domain");
@@ -210,11 +210,11 @@ export function formatUrl(domain: string): string {
 export function getUnsupportedMessage(
   server: ServerConfig,
 ): string | undefined {
-  if (server.zulipFeatureLevel < 65 /* Zulip Server 4.0 */) {
+  if (server.dragonChatFeatureLevel < 65 /* Dragon Chat Server 4.0 */) {
     const realm = new URL(server.url).hostname;
     return t.__(
-      "{{{server}}} runs an outdated Zulip Server version {{{version}}}. It may not fully work in this app.",
-      {server: realm, version: server.zulipVersion},
+      "{{{server}}} runs an outdated Dragon Chat Server version {{{version}}}. It may not fully work in this app.",
+      {server: realm, version: server.dragonChatVersion},
     );
   }
 

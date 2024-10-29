@@ -11,7 +11,9 @@ export async function openBrowser(url: URL): Promise<void> {
   } else {
     // For security, indirect links to non-whitelisted protocols
     // through a real web browser via a local HTML file.
-    const directory = fs.mkdtempSync(path.join(os.tmpdir(), "zulip-redirect-"));
+    const directory = fs.mkdtempSync(
+      path.join(os.tmpdir(), "dragon-chat-redirect-"),
+    );
     const file = path.join(directory, "redirect.html");
     fs.writeFileSync(
       file,

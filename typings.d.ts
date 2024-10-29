@@ -1,4 +1,4 @@
-declare module "zulip:remote" {
+declare module "dragonchat:remote" {
   export const {
     app,
     dialog,

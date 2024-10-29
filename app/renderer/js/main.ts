@@ -843,7 +843,7 @@ export class ServerManagerView {
           },
         },
         {
-          label: "Copy Zulip URL",
+          label: "Copy Dragon Chat URL",
           click() {
             clipboard.writeText(DomainUtil.getDomain(index).url);
           },
@@ -979,7 +979,9 @@ export class ServerManagerView {
 
     ipcRenderer.on("open-help", async () => {
       // Open help page of current active server
-      await LinkUtil.openBrowser(new URL("https://zulip.com/help/"));
+      await LinkUtil.openBrowser(
+        new URL("https://chat.dragonplayground.com/help/"),
+      );
     });
 
     ipcRenderer.on("reload-viewer", this.reloadView.bind(this));
@@ -1144,7 +1146,7 @@ export class ServerManagerView {
       );
     });
 
-    ipcRenderer.on("copy-zulip-url", async () => {
+    ipcRenderer.on("copy-dragon-chat-url", async () => {
       clipboard.writeText(await this.getCurrentActiveServer());
     });
 

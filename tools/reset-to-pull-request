@@ -9,7 +9,7 @@ if ! git diff-index --quiet HEAD; then
     exit 1
 fi
 
-remote_default="$(git config zulip.zulipRemote || echo upstream)"
+remote_default="$(git config dragonchat.dragonChatRemote || echo upstream)"
 
 request_id="$1"
 remote=${2:-"$remote_default"}

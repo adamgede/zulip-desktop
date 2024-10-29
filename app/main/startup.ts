@@ -20,13 +20,13 @@ export const setAutoLaunch = async (
 
   // `setLoginItemSettings` doesn't support linux
   if (process.platform === "linux") {
-    const zulipAutoLauncher = new AutoLaunch({
-      name: "Zulip",
+    const dragonChatAutoLauncher = new AutoLaunch({
+      name: "Dragon Chat",
       isHidden: false,
     });
     await (autoLaunchOption
-      ? zulipAutoLauncher.enable()
-      : zulipAutoLauncher.disable());
+      ? dragonChatAutoLauncher.enable()
+      : dragonChatAutoLauncher.disable());
   } else {
     app.setLoginItemSettings({
       openAtLogin: autoLaunchOption,

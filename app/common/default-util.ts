@@ -1,19 +1,19 @@
 import fs from "node:fs";
 
-import {app} from "zulip:remote";
+import {app} from "dragonchat:remote";
 
 let setupCompleted = false;
 
-const zulipDirectory = app.getPath("userData");
-const logDirectory = `${zulipDirectory}/Logs/`;
-const configDirectory = `${zulipDirectory}/config/`;
+const dragonChatDirectory = app.getPath("userData");
+const logDirectory = `${dragonChatDirectory}/Logs/`;
+const configDirectory = `${dragonChatDirectory}/config/`;
 export const initSetUp = (): void => {
   // If it is the first time the app is running
-  // create zulip dir in userData folder to
+  // create dragon chat dir in userData folder to
   // avoid errors
   if (!setupCompleted) {
-    if (!fs.existsSync(zulipDirectory)) {
-      fs.mkdirSync(zulipDirectory);
+    if (!fs.existsSync(dragonChatDirectory)) {
+      fs.mkdirSync(dragonChatDirectory);
     }
 
     if (!fs.existsSync(logDirectory)) {
@@ -24,10 +24,10 @@ export const initSetUp = (): void => {
     // data folder. This will be done once when a user updates to the new version.
     if (!fs.existsSync(configDirectory)) {
       fs.mkdirSync(configDirectory);
-      const domainJson = `${zulipDirectory}/domain.json`;
-      const settingsJson = `${zulipDirectory}/settings.json`;
-      const updatesJson = `${zulipDirectory}/updates.json`;
-      const windowStateJson = `${zulipDirectory}/window-state.json`;
+      const domainJson = `${dragonChatDirectory}/domain.json`;
+      const settingsJson = `${dragonChatDirectory}/settings.json`;
+      const updatesJson = `${dragonChatDirectory}/updates.json`;
+      const windowStateJson = `${dragonChatDirectory}/window-state.json`;
       const configData = [
         {
           path: domainJson,

@@ -54,15 +54,15 @@ export const _getServerSettings = async (
     realm_name,
     realm_uri,
     realm_icon,
-    zulip_version,
-    zulip_feature_level,
+    dragon_chat_version,
+    dragon_chat_feature_level,
   } = z
     .object({
       realm_name: z.string(),
       realm_uri: z.string().url(),
       realm_icon: z.string(),
-      zulip_version: z.string().default("unknown"),
-      zulip_feature_level: z.number().default(0),
+      dragon_chat_version: z.string().default("unknown"),
+      dragon_chat_feature_level: z.number().default(0),
     })
     .parse(data);
   /* eslint-enable @typescript-eslint/naming-convention */
@@ -73,8 +73,8 @@ export const _getServerSettings = async (
     icon: realm_icon.startsWith("/") ? realm_uri + realm_icon : realm_icon,
     url: realm_uri,
     alias: realm_name,
-    zulipVersion: zulip_version,
-    zulipFeatureLevel: zulip_feature_level,
+    dragonChatVersion: dragon_chat_version,
+    dragonChatFeatureLevel: dragon_chat_feature_level,
   };
 };
 

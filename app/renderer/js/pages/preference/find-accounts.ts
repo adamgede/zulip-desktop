@@ -24,7 +24,7 @@ export function initFindAccounts(properties: FindAccountsProperties): void {
     <div class="settings-card certificate-card">
       <div class="certificate-input">
         <div>${t.__("Organization URL")}</div>
-        <input class="setting-input-value" value="zulipchat.com" />
+        <input class="setting-input-value" value="chat.dragonplayground.com" />
       </div>
       <div class="certificate-input">
         <button class="green w-150" id="find-accounts-button">
@@ -46,7 +46,7 @@ export function initFindAccounts(properties: FindAccountsProperties): void {
   });
 
   $serverUrlField.addEventListener("click", () => {
-    if ($serverUrlField.value === "zulipchat.com") {
+    if ($serverUrlField.value === "chat.dragonplayground.com") {
       $serverUrlField.setSelectionRange(0, 0);
     }
   });

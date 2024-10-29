@@ -3,7 +3,7 @@ import fs from "node:fs";
 import os from "node:os";
 import process from "node:process";
 
-import {app} from "zulip:remote";
+import {app} from "dragonchat:remote";
 
 import {initSetUp} from "./default-util.js";
 

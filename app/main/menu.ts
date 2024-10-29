@@ -58,7 +58,7 @@ function getToolsSubmenu(): MenuItemConstructorOptions[] {
       label: t.__("Release Notes"),
       async click() {
         await shell.openExternal(
-          `https://github.com/zulip/zulip-desktop/releases/tag/v${app.getVersion()}`,
+          `https://github.com/adamgede/zulip-desktop/releases/tag/v${app.getVersion()}`,
         );
       },
     },
@@ -79,7 +79,7 @@ function getToolsSubmenu(): MenuItemConstructorOptions[] {
         // Put the log file in downloads folder
         const logFilePath = `${app.getPath(
           "downloads",
-        )}/Zulip-logs-${dateString}.zip`;
+        )}/Dragon-Chat-logs-${dateString}.zip`;
         zip.writeZip(logFilePath);
 
         // Open and select the log file
@@ -90,7 +90,7 @@ function getToolsSubmenu(): MenuItemConstructorOptions[] {
       type: "separator",
     },
     {
-      label: t.__("Toggle DevTools for Zulip App"),
+      label: t.__("Toggle DevTools for Dragon Chat App"),
       accelerator:
         process.platform === "darwin" ? "Alt+Command+I" : "Ctrl+Shift+I",
       click(_item, focusedWindow) {
@@ -268,7 +268,7 @@ function getHelpSubmenu(): MenuItemConstructorOptions[] {
       enabled: false,
     },
     {
-      label: t.__("About Zulip"),
+      label: t.__("About Dragon Chat"),
       click(_item, focusedWindow) {
         if (focusedWindow) {
           sendAction("open-about");
@@ -286,7 +286,7 @@ function getHelpSubmenu(): MenuItemConstructorOptions[] {
     {
       label: t.__("Report an Issue"),
       async click() {
-        await shell.openExternal("https://zulip.com/help/contact-support");
+        await shell.openExternal("https://dragonplayground.com");
       },
     },
   ];
@@ -421,12 +421,12 @@ function getDarwinTpl(
           type: "separator",
         },
         {
-          label: t.__("Copy Zulip URL"),
+          label: t.__("Copy Dragon Chat URL"),
           accelerator: "Cmd+Shift+C",
           enabled: enableMenu,
           click(_item, focusedWindow) {
             if (focusedWindow) {
-              sendAction("copy-zulip-url");
+              sendAction("copy-dragon-chat-url");
             }
           },
         },
@@ -588,12 +588,12 @@ function getOtherTpl(properties: MenuProperties): MenuItemConstructorOptions[] {
           type: "separator",
         },
         {
-          label: t.__("Copy Zulip URL"),
+          label: t.__("Copy Dragon Chat URL"),
           accelerator: "Ctrl+Shift+C",
           enabled: enableMenu,
           click(_item, focusedWindow) {
             if (focusedWindow) {
-              sendAction("copy-zulip-url");
+              sendAction("copy-dragon-chat-url");
             }
           },
         },

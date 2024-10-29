@@ -5,7 +5,7 @@ import * as Sentry from "@sentry/core";
 import {JsonDB} from "node-json-db";
 import {DataError} from "node-json-db/dist/lib/Errors";
 import type {z} from "zod";
-import {app, dialog} from "zulip:remote";
+import {app, dialog} from "dragonchat:remote";
 
 import {configSchemata} from "./config-schemata.js";
 import * as EnterpriseUtil from "./enterprise-util.js";

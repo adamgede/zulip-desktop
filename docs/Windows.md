@@ -22,7 +22,7 @@ C:\Windows\system32> npm install --global --production windows-build-tools
 Clone the source locally:
 
 ```sh
-$ git clone https://github.com/zulip/zulip-desktop
+$ git clone https://github.com/adamgede/zulip-desktop
 $ cd zulip-desktop
 ```
 

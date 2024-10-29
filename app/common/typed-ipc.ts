@@ -34,7 +34,7 @@ export type MainCall = {
 
 export type RendererMessage = {
   back: () => void;
-  "copy-zulip-url": () => void;
+  "copy-dragon-chat-url": () => void;
   destroytray: () => void;
   "enter-fullscreen": () => void;
   focus: () => void;

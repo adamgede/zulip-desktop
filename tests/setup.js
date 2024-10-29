@@ -13,7 +13,7 @@ module.exports = {
   resetTestDataDir: resetTestDataDirectory,
 };
 
-// Runs Zulip Desktop.
+// Runs Dragon Chat Desktop.
 // Returns a promise that resolves to an Electron Application once the app has loaded.
 function createApp() {
   return _electron.launch({

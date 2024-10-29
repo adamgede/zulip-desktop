@@ -22,7 +22,7 @@ export default defineConfig({
           },
           resolve: {
             alias: {
-              "zulip:remote": "electron/main",
+              "dragonchat:remote": "electron/main",
             },
           },
           ssr: {
@@ -56,7 +56,7 @@ export default defineConfig({
           },
           resolve: {
             alias: {
-              "zulip:remote": "@electron/remote",
+              "dragonchat:remote": "@electron/remote",
             },
           },
         },

@@ -23,7 +23,7 @@ about: Create a report to help us improve
 
 - Operating System:
 <!-- (Platform and Version) e.g. macOS 10.13.6 / Windows 10 (1803) / Ubuntu 18.04 x64 -->
-- Zulip Desktop Version:
+- Dragon Chat Desktop Version:
 <!-- e.g. 5.2.0 -->
 
 **Additional context**

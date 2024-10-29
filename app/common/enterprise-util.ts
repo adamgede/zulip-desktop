@@ -23,10 +23,10 @@ let configFile: boolean;
 reloadDatabase();
 
 function reloadDatabase(): void {
-  let enterpriseFile = "/etc/zulip-desktop-config/global_config.json";
+  let enterpriseFile = "/etc/dragon-chat-desktop-config/global_config.json";
   if (process.platform === "win32") {
     enterpriseFile =
-      "C:\\Program Files\\Zulip-Desktop-Config\\global_config.json";
+      "C:\\Program Files\\Dragon-Chat-Desktop-Config\\global_config.json";
   }
 
   enterpriseFile = path.resolve(enterpriseFile);

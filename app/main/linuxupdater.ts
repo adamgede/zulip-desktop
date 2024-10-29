@@ -13,7 +13,7 @@ const logger = new Logger({
 });
 
 export async function linuxUpdateNotification(session: Session): Promise<void> {
-  let url = "https://api.github.com/repos/zulip/zulip-desktop/releases";
+  let url = "https://api.github.com/repos/adamgede/zulip-desktop/releases";
   url = ConfigUtil.getConfigItem("betaUpdate", false) ? url : url + "/latest";
 
   try {
@@ -34,7 +34,7 @@ export async function linuxUpdateNotification(session: Session): Promise<void> {
       const notified = LinuxUpdateUtil.getUpdateItem(latestVersion);
       if (notified === null) {
         new Notification({
-          title: "Zulip Update",
+          title: "Dragon Chat Update",
           body: `A new version ${latestVersion} is available. Please update using your package manager.`,
         }).show();
         LinuxUpdateUtil.setUpdateItem(latestVersion, true);
