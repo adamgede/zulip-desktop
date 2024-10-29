@@ -57,19 +57,20 @@ export async function appUpdater(updateFromMenu = false): Promise<void> {
         autoUpdater.removeAllListeners(event);
       }
 
-      await dialog
-        .showMessageBox({
+      try {
+        const buttonIndex = await dialog.showMessageBox({
           message: `A new version ${info.version}, of Dragon Chat is available`,
           detail:
             "The update will be downloaded in the background. You will be notified when it is ready to be installed.",
-          buttons: ['Sure', 'No']
-        })
-        .then(buttonIndex => {
-          if (buttonIndex.response === 0) {
-            autoUpdater.downloadUpdate();
-          }
-        })
-        .catch(e => console.log(e));
+          buttons: ["Sure", "No"],
+        });
+
+        if (buttonIndex.response === 0) {
+          await autoUpdater.downloadUpdate();
+        }
+      } catch (error: unknown) {
+        console.log(error);
+      }
     }
   });
 
@@ -103,7 +104,7 @@ export async function appUpdater(updateFromMenu = false): Promise<void> {
       });
       if (response === 0) {
         await shell.openExternal(
-          "https://github.com/adamgede/zulip-desktop/releases/latest/download/dragon-chat.exe"
+          "https://github.com/adamgede/zulip-desktop/releases/latest/download/dragon-chat.exe",
         );
       }
     }

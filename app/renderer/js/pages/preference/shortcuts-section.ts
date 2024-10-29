@@ -21,8 +21,7 @@ export function initShortcutsSection({
           <b><i class="material-icons md-14">settings</i>${t.__("Tip")}: </b
           >${t.__(
             "These desktop app shortcuts extend the Dragon Chat webapp's",
-          )}
-          <span id="open-hotkeys-link"> ${t.__("keyboard shortcuts")}</span>.
+          )}<span id="open-hotkeys-link"> ${t.__("keyboard shortcuts")}</span>.
         </p>
       </div>
       <div class="title">${t.__("Application Shortcuts")}</div>

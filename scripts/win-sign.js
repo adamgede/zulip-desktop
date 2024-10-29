@@ -1,4 +1,5 @@
-"use strict";
+/* eslint-disable import/unambiguous */
+// "use strict";
 
 const childProcess = require("node:child_process");
 const {promisify} = require("node:util");
