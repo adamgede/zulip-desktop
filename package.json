@@ -1,6 +1,6 @@
 {
   "name": "dragon-chat",
-  "productName": "Dragon Chat",
+  "productName": "dragon-chat",
   "version": "1.0.1",
   "main": "./dist-electron",
   "description": "Dragon Chat Desktop App",
@@ -131,7 +131,7 @@
       "perMachine": true
     },
     "nsisWeb": {
-      "artifactName": "${productName}-${version}.${ext}"
+      "artifactName": "${productName}.${ext}"
     }
   },
   "keywords": [
